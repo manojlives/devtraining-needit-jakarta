@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Needit" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Assettag" mandatory="true" max_length="40" name="assettag" type="string"/>
+        <element label="Barcode" max_length="40" name="barcode" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element default="20" label="Phone Number" max_length="40" name="phone_number" type="phone_number_e164"/>
+        <element label="Serial Number" mandatory="true" max_length="40" name="serial_number" type="string"/>
+        <element choice="1" default="Active" display="true" label="Status" mandatory="true" max_length="10" name="status" type="choice">
+            <choice>
+                <element label="Active" sequence="0" value="Active"/>
+                <element label="InTransit" sequence="1" value="InTransit"/>
+                <element label="Stock" sequence="2" value="Stock"/>
+                <element label="Retired" sequence="3" value="Retired"/>
+            </choice>
+        </element>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="javascript:gs.nowDateTime()" dynamic_default_value="79cb83a85f220100a9ad2572f2b4773c" label="Created Date/Time" max_length="40" name="u_glide_date_time_1" read_only="true" type="glide_date_time" use_dynamic_default="true"/>
+        <element label="User" mandatory="true" max_length="32" name="u_reference_2" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="u_reference_2"/>
+        </index>
+    </element>
+</database>
